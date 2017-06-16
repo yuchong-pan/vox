@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+    static:
+        restart: always
+        build: ./static
+        volumes:
+            - ./static:/usr/share/static
+
+    nginx:
+        restart: always
+        build: ./nginx
+        ports:
+            - "80:80"
+        links:
+            - django:django
+        volumes_from:
+            - static
