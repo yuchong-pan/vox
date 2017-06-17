@@ -49,10 +49,10 @@ function fakeInit() {
     var last = null;
     $("#slider").on("slide", function(e) {
         var node = findTime(e.value, data);
-        if (last) {
+        if (last != null) {
             smallNode(last);
         }
-        if (node) {
+        if (node != null) {
             largeNode(node.node_id);
             last = node.node_id;
         } else {
