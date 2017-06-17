@@ -124,14 +124,11 @@ function genTree(treeData) {
 
     // Toggle children on click.
     function click(d) {
-      if (d.children) {
-        d._children = d.children;
-        d.children = null;
-      } else {
-        d.children = d._children;
-        d._children = null;
-      }
-      update(d);
+        if (d3.select(".node:nth-of-type(" + (d.node_id + 1) + ") .sm-text").style("display") == "block") { // is small
+            largeNode(d);
+        } else { // is large
+            smallNode(d);
+        }
     }
 }
 
