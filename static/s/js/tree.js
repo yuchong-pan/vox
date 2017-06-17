@@ -195,12 +195,12 @@ function addKeywords(data) {
 
 function largeNode(i) {
     d3.selectAll(".node:nth-of-type(" + (i + 1) + ") .sm-text").style("display", "none");
-    d3.selectAll(".node:nth-of-type(" + (i + 1) + ")").attr("r", 100);
+    d3.selectAll(".node:nth-of-type(" + (i + 1) + ") circle").attr("r", 100);
     d3.selectAll(".node:nth-of-type(" + (i + 1) + ") .lg-text").style("display", "block");
 }
 
 function smallNode(i) {
     d3.selectAll(".node:nth-of-type(" + (i + 1) + ") .lg-text").style("display", "none");
-    d3.selectAll(".node:nth-of-type(" + (i + 1) + ")").attr("r", 10);
+    d3.selectAll(".node:nth-of-type(" + (i + 1) + ") circle").attr("r", 10);
     d3.selectAll(".node:nth-of-type(" + (i + 1) + ") .sm-text").style("display", "block");
 }
