@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="/s/lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/s/lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/s/lib/font-awesome-animation/font-awesome-animation.min.css">
     <link rel="stylesheet" href="/s/lib/slider/css/bootstrap-slider.min.css">
     <link rel="stylesheet" href="/s/css/tree.css">
     <link rel="stylesheet" href="/s/css/slider.css">
@@ -16,16 +17,17 @@
   </head>
 
   <body style="height: 100vh;">
-      <div id="recorder">
-          <a href="#" @click="recordOrStop()">
-              <i class="fa fa-microphone fa-2x"></i>
-          </a>
-      </div>
-      <div id="slider-wrapper">
-          <input id='slider' type='text' data-slider-min='0' data-slider-max='0' data-slider-step='1' data-slider-value='0'>
+      <div id="main">
+          <div id="recorder">
+              <a href="#" @click="recordOrStop()">
+                  <i v-bind:class="['fa fa-microphone fa-2x', recording ? 'faa-flash animated' : '']"></i>
+              </a>
+          </div>
+          <div id="slider-wrapper">
+              <input id='slider' type='text' data-slider-min='0' data-slider-max='0' data-slider-step='1' data-slider-value='0'>
+          </div>
       </div>
 
-<!-- load the d3.js library -->	
 <script src="/s/lib/jquery/jquery-3.1.1.min.js"></script>
 <script src="/s/lib/d3/d3.v3.min.js"></script>
 <script src="/s/lib/bootstrap/js/bootstrap.min.js"></script>

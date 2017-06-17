@@ -60,3 +60,16 @@ function fakeInit(treeData, len) {
         }
     });
 }
+
+var vm = Vue({
+    el: "#main",
+    data: {
+        recording: false
+    },
+    methods: {
+        recordOrStop: function() {
+            // do something
+            this.recording = !this.recording;
+        }
+    }
+});
