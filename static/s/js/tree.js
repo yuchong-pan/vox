@@ -1,25 +1,25 @@
 var treeData = [
   {
-    "name": "Top Level",
+    "name": 0,
     "parent": "null",
     "children": [
       {
-        "name": "Level 2: A",
-        "parent": "Top Level",
+        "name": 1,
+        "parent": 0,
         "children": [
           {
-            "name": "Son of A",
-            "parent": "Level 2: A"
+            "name": 2,
+            "parent": 1
           },
           {
-            "name": "Daughter of A",
-            "parent": "Level 2: A"
+            "name": 3,
+            "parent": 1
           }
         ]
       },
       {
-        "name": "Level 2: B",
-        "parent": "Top Level"
+        "name": 4,
+        "parent": 0
       }
     ]
   }
