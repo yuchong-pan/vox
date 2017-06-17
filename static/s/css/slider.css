@@ -7,8 +7,12 @@
 
 #recorder {
     position: fixed;
-    bottom: 20px;
-    left: 50px;
+    bottom: 15px;
+    left: 40px;
+}
+
+a, a:hover, a:focus, a:visited {
+    color: black;
 }
 
 #slider-wrapper .slider {
