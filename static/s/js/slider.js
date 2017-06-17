@@ -9,7 +9,4 @@ function genSlider(len) {
             return hhmmss[0] + ":" + hhmmss[1] + ":" + hhmmss[2];
         }
     });
-    $("#slider").on("slide", function(e) {
-        console.log(e.value);
-    });
 }

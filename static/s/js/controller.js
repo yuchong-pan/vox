@@ -46,4 +46,12 @@ function fakeInit() {
     var data = dfsData(treeData);
     data = syncNode(data);
     addKeywords(data);
+    var last = null;
+    $("#slider").on("slide", function(e) {
+        var nodeId = findTime(e.value, data);
+        if (last) {
+            smallNode(last);
+        }
+        largeNode(nodeId);
+    });
 }
