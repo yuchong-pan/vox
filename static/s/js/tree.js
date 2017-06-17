@@ -2,21 +2,29 @@ var treeData = [
   {
     "name": 0,
     "keywords": ["Vox"],
+    "start_time": 5,
+    "end_time": 11,
     "parent": "null",
     "children": [
       {
         "name": 1,
         "keywords": ["education"],
+        "start_time": 27,
+        "end_time": 35,
         "parent": 0,
         "children": [
           {
             "name": 2,
             "keywords": ["MOOC"],
+            "start_time": 36,
+            "end_time": 47,
             "parent": 1
           },
           {
             "name": 3,
             "keywords": ["vertical search"],
+            "start_time": 50,
+            "end_time": 59,
             "parent": 1
           }
         ]
@@ -24,6 +32,8 @@ var treeData = [
       {
         "name": 4,
         "keywords": ["meeting recording"],
+        "start_time": 15,
+        "end_time": 21,
         "parent": 0
       }
     ]
@@ -90,6 +100,11 @@ function genTree(treeData) {
           .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
           .text(function(d) { return d.keywords[0]; })
           .style("fill-opacity", 1e-6);
+
+      nodeEnter.append("text")
+          .style("display", "none")
+          .attr("class", "node-name")
+          .text(function(d) { return d.name; });
 
       // Transition nodes to their new position.
       var nodeUpdate = node.transition()
