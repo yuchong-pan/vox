@@ -1,3 +1,5 @@
+var update;
+
 function genTree(treeData) {
 
     // ************** Generate the tree diagram	 *****************
@@ -29,7 +31,7 @@ function genTree(treeData) {
 
     d3.select(self.frameElement).style("height", $("#slider-wrapper").offset().top + "px");
 
-    function update(source) {
+    update = function(source) {
 
       // Compute the new tree layout.
       var nodes = tree.nodes(root).reverse(),
