@@ -6,13 +6,17 @@ function dfsData(data) {
             "start_time": data[i].start_time,
             "end_time": data[i].end_time
         };
+        dfsData(data[i].children);
     }
 
+    return ans;
+}
+
+function syncNode(ans) {
     var all = $(".node text.node-name");
     for (var i = 0; i < data.length; i++) {
         ans[all.eq(i).text()].node_id = i;
     }
-
     return ans;
 }
 
