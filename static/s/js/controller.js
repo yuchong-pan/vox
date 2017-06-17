@@ -43,7 +43,7 @@ var treeData = [
 function fakeInit() {
     genSlider(60);
     genTree(treeData);
-    var data = dfsData(TreeData);
+    var data = dfsData(treeData);
     data = syncNode(data);
     addKeywords(data);
 }
