@@ -40,8 +40,6 @@ var treeData = [
   }
 ];
 
-var nodeEnter, nodeUpdate, nodeExit;
-
 function genTree(treeData) {
 
     // ************** Generate the tree diagram	 *****************
@@ -87,7 +85,7 @@ function genTree(treeData) {
           .data(nodes, function(d) { return d.id || (d.id = ++i); });
 
       // Enter any new nodes at the parent's previous position.
-      nodeEnter = node.enter().append("g")
+      var nodeEnter = node.enter().append("g")
           .attr("class", "node")
           .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
           .on("click", click);
@@ -110,7 +108,7 @@ function genTree(treeData) {
           .text(function(d) { return d.name; });
 
       // Transition nodes to their new position.
-      nodeUpdate = node.transition()
+      var nodeUpdate = node.transition()
           .duration(duration)
           .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
 
@@ -122,7 +120,7 @@ function genTree(treeData) {
           .style("fill-opacity", 1);
 
       // Transition exiting nodes to the parent's new position.
-      nodeExit = node.exit().transition()
+      var nodeExit = node.exit().transition()
           .duration(duration)
           .attr("transform", function(d) { return "translate(" + source.y + "," + source.x + ")"; })
           .remove();
@@ -195,13 +193,13 @@ function addKeywords(data) {
 }
 
 function largeNode(i) {
-    nodeUpdate.selectAll(".node:nth-of-type(" + (i + 1) + ") .sm-text").style("display", "none");
-    nodeUpdate.selectAll(".node:nth-of-type(" + (i + 1) + ")").attr("r", 100);
-    nodeUpdate.selectAll(".node:nth-of-type(" + (i + 1) + ") .lg-text").style("display", "block");
+    d3.selectAll(".node:nth-of-type(" + (i + 1) + ") .sm-text").style("display", "none");
+    d3.selectAll(".node:nth-of-type(" + (i + 1) + ")").attr("r", 100);
+    d3.selectAll(".node:nth-of-type(" + (i + 1) + ") .lg-text").style("display", "block");
 }
 
 function smallNode(i) {
-    nodeUpdate.selectAll(".node:nth-of-type(" + (i + 1) + ") .lg-text").style("display", "none");
-    nodeUpdate.selectAll(".node:nth-of-type(" + (i + 1) + ")").attr("r", 10);
-    nodeUpdate.selectAll(".node:nth-of-type(" + (i + 1) + ") .sm-text").style("display", "block");
+    d3.selectAll(".node:nth-of-type(" + (i + 1) + ") .lg-text").style("display", "none");
+    d3.selectAll(".node:nth-of-type(" + (i + 1) + ")").attr("r", 10);
+    d3.selectAll(".node:nth-of-type(" + (i + 1) + ") .sm-text").style("display", "block");
 }
