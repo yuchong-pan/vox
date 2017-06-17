@@ -1,1 +1,53 @@
-Hello, Vox!
+<!--
+    MAINTAINER: Yuchong Pan
+    EMAIL:      panyuchong@gmail.com
+-->
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Vox</title>
+        <link rel="icon" href="/s/img/vox.png">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="/s/lib/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/s/css/home-styles.css">
+        <!-- /CSS -->
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <img alt="Vox Logo" src="/s/img/vox.png">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-3">
+                    <input type="text" class="form-control" placeholder="Meeting ID">
+                </div>
+                <div class="col-xs-12 col-sm-3">
+                    <input type="text" class="form-control" placeholder="User ID">
+                </div>
+                <div class="col-xs-12 col-sm-3">
+                    <select class="form-control">
+                        <option value="-">Choose...</option>
+                        <option value="owner">Owner</option>
+                        <option value="attendee">Attendee</option>
+                    </select>
+                </div>
+                <div class="col-xs-12 col-sm-3">
+                    <button class="btn btn-primary" @click="join()">Join</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- JS -->
+        <script src="/s/lib/vue/vue.min.js"></script>
+        <script src="/s/js/home-controller.js"></script>
+        <!-- /JS -->
+    </body>
+</html>
