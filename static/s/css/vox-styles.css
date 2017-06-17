@@ -12,6 +12,7 @@ body {
     background-color: lightgray;
     padding: 5px;
     border-radius: 5px;
+    height: 44px;
 }
 
 .footer-col {
