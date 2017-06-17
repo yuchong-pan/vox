@@ -138,7 +138,7 @@ function genTree(treeData) {
 function addKeywords(data) {
     function addKeyword(nodeName, data) {
         for (var i = 0; i < data[nodeName].keywords.length; i++) {
-            d3.selectAll(".node:nth-of-type(" + data[nodeName].node_id + ")").append("text")
+            d3.selectAll(".node:nth-of-type(" + (data[nodeName].node_id + 1) + ")").append("text")
                 .attr("class", "lg-text")
                 .text(data[nodeName].keywords[i])
                 .attr("x", -50)
