@@ -61,7 +61,7 @@ function fakeInit(treeData, len) {
     });
 }
 
-var vm = Vue({
+var vm = new Vue({
     el: "#main",
     data: {
         recording: false
