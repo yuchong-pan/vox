@@ -6,7 +6,7 @@ var vm = new Vue({
     },
     filters: {
         timeFormat: function(timestamp) {
-            var hhmmss = [delta / 3600, delta % 3600 / 60, delta % 60].map(function(value) {
+            var hhmmss = [timestamp / 3600, timestamp % 3600 / 60, timestamp % 60].map(function(value) {
                 value = Math.floor(value);
                 return value < 10 ? ("0" + value) : value.toString();
             });
