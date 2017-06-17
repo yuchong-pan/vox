@@ -1,4 +1,5 @@
 function genSlider(len) {
+    $("#slider-wrapper").empty();
     $("#slider-wrapper").append("<input id='slider' type='text' data-slider-min='0' data-slider-max='" + len + "' data-slider-step='1' data-slider-value='0'>");
     $("#slider").slider({
         formatter: function(value) {
@@ -10,3 +11,6 @@ function genSlider(len) {
         }
     });
 }
+
+genSlider(0);
+$("#slider").slider().slider("disable");

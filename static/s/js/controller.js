@@ -41,10 +41,7 @@ var treeData = [
 ];
 
 function fakeInit(treeData, len) {
-    $("svg").remove();
-    $("#slider-wrapper").empty();
     genSlider(len);
-    $("#slider").slider().slider("disable");
     genTree(treeData);
     var data = dfsData(treeData);
     data = syncNode(data);

@@ -1,4 +1,5 @@
 function genTree(treeData) {
+    $("svg").remove();
 
     // ************** Generate the tree diagram	 *****************
     var margin = {top: 20, right: 120, bottom: 20, left: 120},
