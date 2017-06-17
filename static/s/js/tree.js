@@ -126,7 +126,7 @@ function genTree(treeData) {
     function click(d) {
         var all = $(".node");
         for (var i = 0; i < all.length; i++) {
-            if (all.eq(i).children(".sm-text").style("display") == "block") { // small
+            if (all.eq(i).children(".sm-text").css("display") == "block") { // small
                 smallNode(i);
             } else if (all.eq(i).children(".node-name").text() == d.name) { // large && name == current's
                 largeNode(i);
