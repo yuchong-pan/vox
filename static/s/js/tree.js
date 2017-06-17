@@ -136,6 +136,7 @@ function genTree(treeData) {
                 }
             }
         }
+        $("#slider").slider("setValue", d.start_time);
     }
 }
 
