@@ -184,7 +184,8 @@ function addKeywords(data) {
                 .attr("class", "lg-text")
                 .text(data[nodeName].keywords[i])
                 .attr("x", -50)
-                .attr("dy", -60 + i * 20);
+                .attr("dy", -60 + i * 20)
+                .style("display", "none");
         }
     }
     for (var i in data) {
