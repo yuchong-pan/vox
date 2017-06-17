@@ -48,10 +48,11 @@ function fakeInit() {
     addKeywords(data);
     var last = null;
     $("#slider").on("slide", function(e) {
-        var nodeId = findTime(e.value, data);
+        var nodeId = findTime(e.value, data).node_id;
         if (last) {
             smallNode(last);
         }
         largeNode(nodeId);
+        last = nodeId;
     });
 }
