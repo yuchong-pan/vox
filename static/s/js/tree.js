@@ -30,7 +30,7 @@ function genTree(treeData) {
     // ************** Generate the tree diagram	 *****************
     var margin = {top: 20, right: 120, bottom: 20, left: 120},
         width = $("body").width() - margin.right - margin.left,
-        height = $("body").height() - margin.top - margin.bottom;
+        height = $("#slider-wrapper").offset().top - margin.top - margin.bottom;
         
     var i = 0,
         duration = 750,
@@ -54,7 +54,7 @@ function genTree(treeData) {
       
     update(root);
 
-    d3.select(self.frameElement).style("height", $("body").height() + "px");
+    d3.select(self.frameElement).style("height", $("#slider-wrapper").offset().top + "px");
 
     function update(source) {
 
