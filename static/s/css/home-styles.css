@@ -1,0 +1,26 @@
+body {
+    font-family: 'Lato';
+}
+
+#main-container {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+}
+
+.logo-img {
+    width: 70%;
+}
+
+.setting-row {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.join-btn {
+    width: 100%;
+}

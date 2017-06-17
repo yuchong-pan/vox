@@ -14,18 +14,19 @@
 
         <!-- CSS -->
         <link rel="stylesheet" href="/s/lib/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/s/css/font.css">
         <link rel="stylesheet" href="/s/css/home-styles.css">
         <!-- /CSS -->
     </head>
 
     <body>
-        <div class="container">
+        <div id="main-container" class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <img alt="Vox Logo" src="/s/img/vox.png">
+                    <img class="logo-img" alt="Vox Logo" src="/s/img/vox.png">
                 </div>
             </div>
-            <div class="row">
+            <div class="row setting-row">
                 <div class="col-xs-12 col-sm-3">
                     <input type="text" class="form-control" placeholder="Meeting ID">
                 </div>
@@ -34,13 +35,13 @@
                 </div>
                 <div class="col-xs-12 col-sm-3">
                     <select class="form-control">
-                        <option value="-">Choose...</option>
+                        <option value="-">Choose Role...</option>
                         <option value="owner">Owner</option>
                         <option value="attendee">Attendee</option>
                     </select>
                 </div>
                 <div class="col-xs-12 col-sm-3">
-                    <button class="btn btn-primary" @click="join()">Join</button>
+                    <button class="btn btn-info join-btn" @click="join()">Join</button>
                 </div>
             </div>
         </div>
