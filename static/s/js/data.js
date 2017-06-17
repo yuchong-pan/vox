@@ -19,7 +19,7 @@ function dfsData(data) {
 
 function syncNode(ans) {
     var all = $(".node text.node-name");
-    for (var i = 0; i < data.length; i++) {
+    for (var i = 0; i < all.length; i++) {
         ans[all.eq(i).text()].node_id = i;
     }
     return ans;
