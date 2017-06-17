@@ -1,5 +1,3 @@
-var update;
-
 function genTree(treeData) {
 
     // ************** Generate the tree diagram	 *****************
@@ -27,7 +25,7 @@ function genTree(treeData) {
     root.x0 = height / 2;
     root.y0 = 0;
 
-    update = function(source) {
+    function update(source) {
 
       // Compute the new tree layout.
       var nodes = tree.nodes(root).reverse(),
