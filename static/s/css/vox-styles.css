@@ -14,14 +14,21 @@ body {
     border-radius: 5px;
 }
 
-.audio-player {
-    position: absolute;
-    top: 50%;
+.footer-col {
+    padding-right: 0;
 }
 
-.btn-col {
-    padding: 0;
-    padding-right: 15px;
+.current-time {
+    text-align: center;
+    font-size: 16px;
+}
+
+.sound-save {
+    height: 34px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 0 4px black;
+    width: 100%;
 }
 
 .submit-btn {
