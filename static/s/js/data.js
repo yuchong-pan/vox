@@ -8,8 +8,8 @@ function dfsData(data) {
         };
         if (data[i].children) {
             var temp = dfsData(data[i].children);
-            for (var i in temp) {
-                ans[i] = temp[i];
+            for (var j in temp) {
+                ans[j] = temp[j];
             }
         }
     }
