@@ -125,9 +125,9 @@ function genTree(treeData) {
     // Toggle children on click.
     function click(d) {
         if (d3.select(".node:nth-of-type(" + (d.node_id + 1) + ") .sm-text").style("display") == "block") { // is small
-            largeNode(d);
+            largeNode(d.node_id);
         } else { // is large
-            smallNode(d);
+            smallNode(d.node_id);
         }
     }
 }
