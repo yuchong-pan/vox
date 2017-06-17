@@ -1,8 +1,14 @@
 #slider-wrapper {
     position: fixed;
     bottom: 20px;
-    left: 50px;
+    left: 100px;
     right: 50px;
+}
+
+#recorder {
+    position: fixed;
+    bottom: 20px;
+    left: 50px;
 }
 
 #slider-wrapper .slider {
