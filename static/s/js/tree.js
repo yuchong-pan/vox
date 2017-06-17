@@ -26,10 +26,6 @@ function genTree(treeData) {
     root = treeData[0];
     root.x0 = height / 2;
     root.y0 = 0;
-      
-    update(root);
-
-    d3.select(self.frameElement).style("height", $("#slider-wrapper").offset().top + "px");
 
     update = function(source) {
 
@@ -140,6 +136,10 @@ function genTree(treeData) {
         }
         $("#slider").slider("setValue", d.start_time);
     }
+      
+    update(root);
+
+    d3.select(self.frameElement).style("height", $("#slider-wrapper").offset().top + "px");
 }
 
 function addKeywords(data) {
