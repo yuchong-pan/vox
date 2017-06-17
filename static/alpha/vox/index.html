@@ -22,20 +22,22 @@
 
     <body>
         <h3 id="title">{{title}}</h3>
-        <div id="tree-diagram"></div>
-        <div id="footer" class="container">
-            <div class="row footer-row">
-                <div class="col-xs-1 footer-col">
-                    <h4 class="current-time">{{currentTime}}</h4>
-                </div>
-                <div class="col-xs-2 footer-col">
-                    <img class="sound-wave" alt="Sound Wave" src="/s/img/sound-wave.png">
-                </div>
-                <div class="col-xs-8 footer-col">
-                    <input class="form-control">
-                </div>
-                <div class="col-xs-1">
-                    <button class="btn btn-primary submit-btn">Submit</button>
+        <div id="main">
+            <div id="tree-diagram"></div>
+            <div id="footer" class="container">
+                <div class="row footer-row">
+                    <div class="col-xs-1 footer-col">
+                        <h4 class="current-time">{{currentTime | timeFormat}}</h4>
+                    </div>
+                    <div class="col-xs-2 footer-col">
+                        <img class="sound-wave" alt="Sound Wave" src="/s/img/sound-wave.png">
+                    </div>
+                    <div class="col-xs-8 footer-col">
+                        <input class="form-control">
+                    </div>
+                    <div class="col-xs-1">
+                        <button class="btn btn-primary submit-btn">Submit</button>
+                    </div>
                 </div>
             </div>
         </div>
