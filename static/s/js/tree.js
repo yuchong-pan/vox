@@ -1,4 +1,4 @@
-var margin = { top: 20, right: 120, botttom: 20, left: 120 },
+var margin = { top: 20, right: 120, bottom: 20, left: 120 },
     width = $("body").width() - margin.right - margin.left,
     height = $("body").height() - $("#footer").height() - margin.top - margin.bottom;
 
