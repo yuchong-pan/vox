@@ -7,7 +7,10 @@ function dfsData(data) {
             "end_time": data[i].end_time
         };
         if (data[i].children) {
-            dfsData(data[i].children);
+            var temp = dfsData(data[i].children);
+            for (var i in temp) {
+                ans[i] = temp[i];
+            }
         }
     }
 
