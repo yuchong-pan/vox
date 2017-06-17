@@ -10,4 +10,4 @@ var vm = new Vue({
             window.location = "/vox?m=" + meetingId + "&u=" + userId + "&r=" + role;
         }
     }
-};
+});
