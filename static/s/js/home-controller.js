@@ -7,7 +7,9 @@ var vm = new Vue({
     },
     methods: {
         join: function(meetingId, userId, role) {
-            window.location = "/vox?m=" + meetingId + "&u=" + userId + "&r=" + role;
+            if (meetingId && userId && role) {
+                window.location = "/vox?m=" + meetingId + "&u=" + userId + "&r=" + role;
+            }
         }
     }
 });
