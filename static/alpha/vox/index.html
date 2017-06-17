@@ -24,10 +24,11 @@
         <div id="tree-diagram"></div>
         <div id="footer" class="container">
             <div class="row footer-row">
-                <div class="col-xs-3">
-                    <audio controls class="audio-player">
-                        <source v-bind:src="audioSrc" type="audio/wav">
-                    </audio>
+                <div class="col-xs-1">
+                    <h4>{{currentTime}}</h4>
+                </div>
+                <div class="col-xs-2">
+                    <img alt="Sound Wave" class="/s/img/sound-wave.png">
                 </div>
                 <div class="col-xs-8">
                     <input class="form-control">
