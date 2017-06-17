@@ -126,10 +126,14 @@ function genTree(treeData) {
     function click(d) {
         var all = $(".node");
         for (var i = 0; i < all.length; i++) {
-            if (all.eq(i).children(".sm-text").css("display") == "block") { // small
+            if (all.eq(i).children(".lg-text").css("display") == "block") { // large
                 smallNode(i);
-            } else if (all.eq(i).children(".node-name").text() == d.name) { // large && name == current's
-                largeNode(i);
+            } else if (all.eq(i).children(".node-name").text() == d.name) { // name == current's
+                if (all.eq(i).children(".sm-text").css("display") == "block") { // small
+                    largeNode(i);
+                } else { // large
+                    smallNode(i);
+                }
             }
         }
     }
