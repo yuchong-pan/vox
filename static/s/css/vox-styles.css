@@ -27,3 +27,15 @@ body {
 .submit-btn {
     width: 100%;
 }
+
+#title {
+    border-bottom-color: #5fccff;
+    border-bottom-width: 2px;
+    border-bottom-style: dashed;
+    padding-bottom: 10px;
+    display: inline-block;
+    top: 10px;
+    left: 50px;
+    position: fixed;
+    color: #5fccff;
+}
