@@ -68,8 +68,10 @@ var vm = new Vue({
     },
     methods: {
         recordOrStop: function() {
-            // do something
             this.recording = !this.recording;
+            if (!this.recording) {
+                fakeInit(treeData, 70); // fake data
+            }
         }
     }
 });
