@@ -1,0 +1,29 @@
+body {
+    font-family: 'Lato';
+}
+
+#footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+.footer-row {
+    background-color: lightgray;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.audio-player {
+    position: absolute;
+    top: 50%;
+}
+
+.btn-col {
+    padding: 0;
+    padding-right: 15px;
+}
+
+.submit-btn {
+    width: 100%;
+}
