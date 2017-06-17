@@ -1,21 +1,21 @@
 var treeData = [
   {
     "name": 0,
-    "keywords": ["Vox"],
+    "keywords": ["Vox", "voice", "visualization"],
     "start_time": 5,
     "end_time": 11,
     "parent": "null",
     "children": [
       {
         "name": 1,
-        "keywords": ["education"],
+        "keywords": ["education", "programming", "hello"],
         "start_time": 27,
         "end_time": 35,
         "parent": 0,
         "children": [
           {
             "name": 2,
-            "keywords": ["MOOC"],
+            "keywords": ["MOOC", "university"],
             "start_time": 36,
             "end_time": 47,
             "parent": 1
@@ -39,6 +39,8 @@ var treeData = [
     ]
   }
 ];
+
+var nodeEnter, nodeUpdate, nodeExit;
 
 function genTree(treeData) {
 
@@ -85,7 +87,7 @@ function genTree(treeData) {
           .data(nodes, function(d) { return d.id || (d.id = ++i); });
 
       // Enter any new nodes at the parent's previous position.
-      var nodeEnter = node.enter().append("g")
+      nodeEnter = node.enter().append("g")
           .attr("class", "node")
           .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
           .on("click", click);
@@ -99,6 +101,7 @@ function genTree(treeData) {
           .attr("dy", ".35em")
           .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
           .text(function(d) { return d.keywords[0]; })
+          .attr("class", "sm-text")
           .style("fill-opacity", 1e-6);
 
       nodeEnter.append("text")
@@ -107,7 +110,7 @@ function genTree(treeData) {
           .text(function(d) { return d.name; });
 
       // Transition nodes to their new position.
-      var nodeUpdate = node.transition()
+      nodeUpdate = node.transition()
           .duration(duration)
           .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
 
@@ -119,7 +122,7 @@ function genTree(treeData) {
           .style("fill-opacity", 1);
 
       // Transition exiting nodes to the parent's new position.
-      var nodeExit = node.exit().transition()
+      nodeExit = node.exit().transition()
           .duration(duration)
           .attr("transform", function(d) { return "translate(" + source.y + "," + source.x + ")"; })
           .remove();
@@ -174,4 +177,31 @@ function genTree(treeData) {
       }
       update(d);
     }
+}
+
+function addKeywords(data) {
+    function addKeyword(nodeName, data) {
+        for (var i = 0; i < data[nodeName].keywords.length; i++) {
+            d3.selectAll(".node:nth-of-type(" + data[nodeName].node_id + ")").append("text")
+                .attr("class", "lg-text")
+                .text(data[nodeName].keywords[i])
+                .attr("x", -50)
+                .attr("dy", -60 + i * 20);
+        }
+    }
+    for (var i in data) {
+        addKeyword(i, data);
+    }
+}
+
+function largeNode(i) {
+    nodeUpdate.selectAll(".node:nth-of-type(" + (i + 1) + ") .sm-text").style("display", "none");
+    nodeUpdate.selectAll(".node:nth-of-type(" + (i + 1) + ")").attr("r", 100);
+    nodeUpdate.selectAll(".node:nth-of-type(" + (i + 1) + ") .lg-text").style("display", "block");
+}
+
+function smallNode(i) {
+    nodeUpdate.selectAll(".node:nth-of-type(" + (i + 1) + ") .lg-text").style("display", "none");
+    nodeUpdate.selectAll(".node:nth-of-type(" + (i + 1) + ")").attr("r", 10);
+    nodeUpdate.selectAll(".node:nth-of-type(" + (i + 1) + ") .sm-text").style("display", "block");
 }
