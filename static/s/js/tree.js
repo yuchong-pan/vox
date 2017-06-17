@@ -124,10 +124,13 @@ function genTree(treeData) {
 
     // Toggle children on click.
     function click(d) {
-        if (d3.select(".node:nth-of-type(" + (d.node_id + 1) + ") .sm-text").style("display") == "block") { // is small
-            largeNode(d.node_id);
-        } else { // is large
-            smallNode(d.node_id);
+        var all = $(".node");
+        for (var i = 0; i < all.length; i++) {
+            if (all.eq(i).children(".sm-text").style("display") == "block") { // small
+                smallNode(i);
+            } else if (all.eq(i).children(".node-name").text() == d.name) { // large && name == current's
+                largeNode(i);
+            }
         }
     }
 }
