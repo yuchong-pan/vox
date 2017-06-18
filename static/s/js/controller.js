@@ -133,5 +133,7 @@ function UpdateRecognizedPhrase(json) {
 }
 
 function onComplete() {
-    RecognizerStart(vm.SDK, vm.recognizer);
+    if (vm.recording) {
+        RecognizerStart(vm.SDK, vm.recognizer);
+    }
 }
