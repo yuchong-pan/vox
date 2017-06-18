@@ -100,6 +100,7 @@ function UpdateRecognizedHypothesis(text) {
 
 function OnSpeechEndDetected() {
     vm.recording = false;
+    console.log("on speech end detected");
 }
 
 function UpdateRecognizedPhrase(json) {
