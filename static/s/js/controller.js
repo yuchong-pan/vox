@@ -86,7 +86,7 @@ var vm = new Vue({
             }
         },
         setup: function() {
-            this.recongizer = RecognizerSetup(this.SDK, this.SDK.RecognitionMode.Interactive, "zh-CN", this.SDK.SpeechResultFormat["Simple"], "1f6bd0fb94504b799d0a555a45fddf9f");
+            this.recognizer = RecognizerSetup(this.SDK, this.SDK.RecognitionMode.Interactive, "zh-CN", this.SDK.SpeechResultFormat["Simple"], "1f6bd0fb94504b799d0a555a45fddf9f");
         }
     }
 });
