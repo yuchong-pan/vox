@@ -64,14 +64,47 @@ function fakeInit(treeData, len) {
 var vm = new Vue({
     el: "#main",
     data: {
-        recording: false
+        recording: false,
+        SDK: null,
+        recognizer: null
+    },
+    mounted: function() {
+        var _this = this;
+        Initialize(function(speechSdk) {
+            _this.SDK = speechSdk;
+        });
     },
     methods: {
         recordOrStop: function() {
             this.recording = !this.recording;
             if (!this.recording) {
+                RecognizerStop(this.SDK, this.recognizer);
                 fakeInit(treeData, 70); // fake data
+            } else {
+                this.setup();
+                RecognizerStart(this.SDK, this.recognizer);
             }
+        },
+        setup: function() {
+            this.recongizer = RecognizerSetup(this.SDK, this.SDK.RecognitionMode.Interactive, "zh-CN", SDK.SpeechResultFormat["Simple"], "1f6bd0fb94504b799d0a555a45fddf9f");
         }
     }
 });
+
+function UpdateStatus(status) {
+}
+
+function UpdateRecognizedHypothesis(text) {
+    console.log(text);
+}
+
+function OnSpeechEndDetected() {
+    vm.recording = false;
+}
+
+function UpdateRecognizedPhrase(json) {
+}
+
+function onComplete() {
+    RecognizerStart(vm.SDK, vm.recognizer);
+}
