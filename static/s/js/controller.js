@@ -42,7 +42,7 @@ var voxFakeData = {
            },
            {
             "name": 6,
-             "keywords": ["D3.js","思维导图","可视化","自己设计"],
+             "keywords": ["D3.js","思维导图","可视化","自主研发"],
              "start_time": 40,
              "end_time": 48,
              "parent": 4
