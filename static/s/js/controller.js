@@ -7,21 +7,21 @@ var voxFakeData = {
     "children": [
       {
         "name": 1,
-        "keywords": ["信息的挖掘","音频文件","逻辑性"],
+        "keywords": ["信息的挖掘","音频文件"],
         "start_time": 11,
         "end_time": 14,
         "parent": 0
       },
       {
         "name": 2,
-        "keywords": ["可视化","音频文件"],
+        "keywords": ["可视化","音频文件", "逻辑"],
         "start_time": 15,
         "end_time": 21,
         "parent": 0
       },
       {
         "name": 3,
-        "keywords": ["思维导图","进度条之间","互动"],
+        "keywords": ["互动", "导航", "思维导图","进度条之间"],
         "start_time": 22,
         "end_time": 26,
         "parent": 0,
