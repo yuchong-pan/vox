@@ -3,8 +3,11 @@ body {
 }
 
 #logo {
-    height: 150px;
     position: fixed;
-    top: 30px;
-    left: 80px;
+    top: 20px;
+    left: 30px;
+}
+
+#logo img {
+    height: 70px;
 }
