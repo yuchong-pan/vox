@@ -66,7 +66,10 @@ var vm = new Vue({
     data: {
         recording: false,
         SDK: null,
-        recognizer: null
+        recognizer: null,
+        text: null,
+        startTime: null,
+        id: 0
     },
     mounted: function() {
         var _this = this;
@@ -79,7 +82,11 @@ var vm = new Vue({
             this.recording = !this.recording;
             if (!this.recording) {
                 RecognizerStop(this.SDK, this.recognizer);
-                fakeInit(treeData, 70); // fake data
+                /*
+                Vue.http.post("/api/realtime", { id: -1 }).then(function(response) {
+                    var data = response.body;
+                    fakeInit(resonse.body, Math.floor(Date.now() / 1000));
+                });*/
             } else {
                 this.setup();
                 RecognizerStart(this.SDK, this.recognizer);
@@ -95,11 +102,34 @@ function UpdateStatus(status) {
 }
 
 function UpdateRecognizedHypothesis(text) {
+    vm.text = text;
+    if (vm.startTime == null) {
+        vm.startTime = Math.floor(Date.now() / 1000);
+    }
     console.log(text);
 }
 
 function OnSpeechEndDetected() {
+    // send text to server
+    /*
+    Vue.http.post("/api/realtime", {
+        id: vm.id,
+        start_time: vm.startTime,
+        end_time: Math.floor(Date.now() / 1000),
+        text: vm.text
+    }).then(function(response) {
+        console.log(response);
+    });
+    */
+    console.log({
+        id: vm.id,
+        start_time: vm.startTime,
+        end_time: Math.floor(Date.now() / 1000),
+        text: vm.text
+    });
+    vm.startTime = null;
     RecognizerStart(vm.SDK, vm.recognizer);
+    vm.id += 1;
 }
 
 function UpdateRecognizedPhrase(json) {
