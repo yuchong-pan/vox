@@ -15,3 +15,12 @@ services:
             - "443:443"
         volumes_from:
             - static
+
+    django:
+        restart: always
+        build: ./django
+        command: python manage.py runserver 0.0.0.0:8000
+        expose:
+            - "8000"
+        volumes:
+            - ./django:/code/
