@@ -82,11 +82,10 @@ var vm = new Vue({
             this.recording = !this.recording;
             if (!this.recording) {
                 RecognizerStop(this.SDK, this.recognizer);
-                /*
                 Vue.http.post("/api/realtime", { id: -1 }).then(function(response) {
                     var data = response.body;
                     fakeInit(resonse.body, Math.floor(Date.now() / 1000));
-                });*/
+                });
             } else {
                 this.setup();
                 RecognizerStart(this.SDK, this.recognizer);
@@ -111,7 +110,6 @@ function UpdateRecognizedHypothesis(text) {
 
 function OnSpeechEndDetected() {
     // send text to server
-    /*
     Vue.http.post("/api/realtime", {
         id: vm.id,
         start_time: vm.startTime,
@@ -120,7 +118,6 @@ function OnSpeechEndDetected() {
     }).then(function(response) {
         console.log(response);
     });
-    */
     console.log({
         id: vm.id,
         start_time: vm.startTime,
