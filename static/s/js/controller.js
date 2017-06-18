@@ -84,7 +84,7 @@ var vm = new Vue({
                 RecognizerStop(this.SDK, this.recognizer);
                 Vue.http.post("/api/realtime", { id: -1 }).then(function(response) {
                     var data = response.body;
-                    fakeInit(resonse.body, Math.floor(Date.now() / 1000));
+                    fakeInit([resonse.body], Math.floor(Date.now() / 1000));
                 });
             } else {
                 this.setup();
